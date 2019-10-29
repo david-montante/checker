@@ -1,24 +1,20 @@
-# README
+# Checker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application uses devise to create and authenticate users. There are two 
+kind of users. 
 
-Things you may want to cover:
+Admin Users can:
 
-* Ruby version
+* Watch user reports
 
-* System dependencies
+* Add users
 
-* Configuration
+Users can:
 
-* Database creation
+* Check-in to work
 
-* Database initialization
+* Check-out to work
 
-* How to run the test suite
+* Watch Assistance Reports
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A user can also create an account by itself. 
