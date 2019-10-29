@@ -1,0 +1,42 @@
+<nav class="header">
+  <div class="container">
+    <div class="row">
+      <div class="navbar-logo">
+        <a href="/" target="_self">
+          <%= image_tag("logo.png", alt: "Checker", class: "navbar-brand") %>
+        </a>
+      </div> 
+      <div class="navbar-media">
+        <% if controller_name == 'registrations' ||
+              controller_name == 'passwords' ||
+              controller_name == 'sessions' %>
+            </div>
+          </div>
+        </div>
+        <% else %>
+          <% if current_user.blank? %>
+            <a href="/users/sign_up" target="_self">
+              <div class="button web">Create Account</div>
+            </a>
+            <a href="/users/sign_in" target="_self">
+              <div class="letter-button web">Login</div>
+              <i class="fa fa-user mobile" aria-hidden="true"></i>
+            </a>
+          <% else %>
+            <% unless current_user.user? %>
+              <a href="/admin/dashboard" target="_self">
+                <i class="fa fa-th" aria-hidden="true"></i>
+              </a>
+            <% end %>
+            <%= link_to dashboard_users_path, method: :get do %>
+              <i class="fa fa-th" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out" aria-hidden="true"></i>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</nav>

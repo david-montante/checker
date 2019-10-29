@@ -1,0 +1,35 @@
+<!DOCTYPE html> 
+<html class="no-js" lang="es">
+  <head>
+  <title><%= full_title(yield(:title)) %></title>
+    <%= favicon_link_tag 'favicon.ico' %>
+    
+    <!-- Begin meta tags -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta name="MSSmartTagsPreventParsing" content="true" />
+    <meta name="verify-v1" content="7ry7PPenUMVD3rn2mJ0W8Rri3NwmsrpacO4y2P5cvtk=" />
+
+    <!-- Mobile viewport optimized: j.mp/bplateviewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="A simple check-in/check-out application for Runa">
+    <meta name="author" content="David Montante">
+    
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'styles', media: "all" %>
+    <%= render 'layouts/external_fonts' %>
+
+  </head>
+
+  <body>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/messages' %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
