@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   enum role: %i[user admin]
+
+  def full_name
+    (first_name.to_s + ' ' + last_name.to_s).titleize
+  end
 end
