@@ -1,0 +1,42 @@
+<% provide(:title, 'Dashboard') %>
+<section id="admin" class="content first-section-padding">
+  <%= image_tag("dashboard.png", alt: "Darcennia", class: "main-logo") %>
+  <h1 class="header-padding">Hi <%= current_user.full_name %>!</h1>
+  <div class="cards-container">
+    <a class="card-container" href="/assists">
+      <div class="icon">
+        <i class="fa fa-users" aria-hidden="true"></i>
+      </div>
+      <h3 class="title">Assists</h3>
+    </a>
+    <% if current_user.user? %>
+      <%= form_with(url: check_in_assists_path, method: "post") do |f| %>
+        <button class="card-container" type="submit">
+          <div class="icon">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+          </div>
+          <h3 class="title">Check-in</h3>
+        </button>
+      <% end %>
+      <%= form_with(url: check_out_assists_path, method: "post") do |f| %>
+        <button class="card-container" type="submit">
+          <div class="icon">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
+          </div>
+          <h3 class="title">Check-out</h3>
+        </button>
+      <% end %>
+    <% end %>
+    <% if current_user.admin? %>
+      <a class="card-container" href="/users/new">
+        <div class="icon">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+        <h3 class="title">Add User</h3>
+      </a>
+    <% end %>
+  </div>
+</section>
+
+
+

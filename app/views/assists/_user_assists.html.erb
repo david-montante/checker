@@ -1,0 +1,19 @@
+<thead class="table-header">
+  <tr>
+    <th>Date</th>
+    <th>Check-in Hour</th>
+    <th>Check-out Hour</th>
+    <th>Worked Hours</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <% @assists.each do |assist| %>
+    <tr class="table-row">
+      <td><%= assist.check_in.to_date %></td>
+      <td><%= assist.check_in.to_s(:time) %></td>
+      <td><%= assist.check_out.to_s(:time) %></td>
+      <td><%= assist.worked_hours.to_s(:time) %> hours</td>
+    </tr>
+  <% end %>
+</tbody>
