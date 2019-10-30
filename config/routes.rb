@@ -10,5 +10,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :assists, only: [:index] do
+    collection do 
+      post 'check_in'
+      post 'check_out'
+    end
+  end
+
   root 'home#index'
 end

@@ -23,11 +23,6 @@
               <i class="fa fa-user mobile" aria-hidden="true"></i>
             </a>
           <% else %>
-            <% unless current_user.user? %>
-              <a href="/admin/dashboard" target="_self">
-                <i class="fa fa-th" aria-hidden="true"></i>
-              </a>
-            <% end %>
             <%= link_to dashboard_users_path, method: :get do %>
               <i class="fa fa-th" aria-hidden="true"></i>
             <% end %>
