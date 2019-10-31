@@ -1,0 +1,21 @@
+<thead class="table-header">
+  <tr>
+    <th><%= sort_link(@q, :first_name) do %>
+      Name
+    <% end %></th>
+    <th><%= sort_link(@q, :email) do %>
+      Email
+    <% end %></th>
+    <th>Worked Hours</th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+  <% @users.each do |user| %>
+    <tr class="table-row">
+      <td><%= user.full_name %></td>
+      <td><%= user.email %></td>
+      <td><%= @assists.where(user_id: user.id).to_a.sum(&:worked_hours) %></td>
+    </tr>
+  <% end %>
+</tbody>

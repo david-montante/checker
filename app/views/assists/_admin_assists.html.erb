@@ -1,8 +1,14 @@
 <thead class="table-header">
   <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Date</th>
+    <th><%= sort_link(@q, :user_first_name) do %>
+      Name
+    <% end %></th>
+    <th><%= sort_link(@q, :user_email) do %>
+      Email
+    <% end %></th>
+    <th><%= sort_link(@q, :check_in) do %>
+      Date
+    <% end %></th>
     <th>Check-in Hour</th>
     <th>Check-out Hour</th>
     <th>Worked Hours</th>

@@ -5,6 +5,9 @@
   <div class="container margin-bottom">
     <%= link_to "← Back", dashboard_users_path, class: "float-left" %>
   </div>
+  <% if current_user.admin? %>
+    <%= render 'assist_search_form' %>
+  <% end %>
   <div class="container table-scroll">
     <table class="table">
       <% if current_user.user? %>
