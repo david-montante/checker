@@ -1,0 +1,30 @@
+<div class="search-container">
+  <%= search_form_for @q, url: report_assists_path,
+                          html: { method: :get } do |f| %>
+    <div class="col-sm-2">
+      <%= f.label :first_name, { class: "search-label" } %>
+      <%= f.search_field :first_name_cont, { class: "select-input" } %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.label :last_name, { class: "search-label" } %>
+      <%= f.search_field :last_name_cont, { class: "select-input" } %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.label :email, { class: "search-label" } %>
+      <%= f.search_field :email_cont, { class: "select-input" } %>
+    </div>
+    
+    <div class="col-sm-2">
+      <%= f.label "Later than", { class: "search-label" }  %>
+      <%= f.date_field :assists_check_in_gteq, { class: "select-input" }  %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.label "Before than", { class: "search-label" }  %>
+      <%= f.date_field :assists_check_in_lteq, { class: "select-input" }  %>
+    </div>
+    <div class="col-sm-2">
+      <%= f.label "" %>
+      <%= f.submit "Search", { class: "button" } %>
+    </div>
+  <% end %>
+</div>

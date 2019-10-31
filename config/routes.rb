@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   end
 
   resources :assists, only: [:index] do
-    collection do 
+    collection do
+      get  'report'
       post 'check_in'
       post 'check_out'
     end

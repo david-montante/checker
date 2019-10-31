@@ -1136,6 +1136,26 @@ section.content#admin {
   .label-margin {
     margin: 1.7em 0 0 0;
   }
+
+  .search-container {
+    width: 80%;
+    margin: 1em 10%;
+    float: left;
+    .col-sm-2{
+      float: left;
+    }
+    .search-label {
+      margin: 0
+    }
+    .select-input {
+      margin: 5px 0 0 0;
+    }
+    .button {
+      width: 100%;
+      margin: 5px 0 0 0;
+      padding: 0.5em
+    }
+  }
 }
 
 @media only screen and (max-width: 991px){

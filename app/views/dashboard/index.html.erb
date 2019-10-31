@@ -28,6 +28,12 @@
       <% end %>
     <% end %>
     <% if current_user.admin? %>
+      <a class="card-container" href="/assists/report">
+        <div class="icon">
+          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+        </div>
+        <h3 class="title">Reports</h3>
+      </a>
       <a class="card-container" href="/users/new">
         <div class="icon">
           <i class="fa fa-user" aria-hidden="true"></i>
@@ -37,6 +43,3 @@
     <% end %>
   </div>
 </section>
-
-
-
