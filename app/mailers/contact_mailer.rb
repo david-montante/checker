@@ -1,6 +1,4 @@
 class ContactMailer < ActionMailer::Base
-  default from: "\"Darcennia\" <david@darcennia.com>"
-
   def welcome(user, password, app_domain)
     @user = user
     @password = password
