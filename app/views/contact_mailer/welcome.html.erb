@@ -1,0 +1,59 @@
+<%= stylesheet_link_tag 'custom.css' %> 
+<table class="row-1">
+  <tbody><tr class="left-align">
+    <td class="center" align="center" valign="top" >
+      <center style="width:100%; min-width:580px">
+        <table class="container">
+            <tbody><tr class="left-align">
+              <td class="center">
+                <div>
+                  <table class="row">
+                    <tbody><tr class="left-align">
+                      <th class="th-text padding-bottom-16 width-564">
+                        <p class="context">
+                          <p>Hi <%= @user.full_name %>!</p> 
+                        </p>
+                      </th>
+                    </tr></tbody>
+                  </table>
+                </div>
+                <div>
+                  <table class="row">
+                    <tbody><tr class="left-align">
+                      <th class="th-text padding-bottom-16 width-564">
+                        <p class="context">
+                          You were invited to Runa's Checker. Now you can start
+                          checking your hours. Your temp password is:
+                          <%= @password %>. 
+                        </p>
+                      </th>
+                    </tr></tbody>
+                  </table>
+                </div>
+                <br/>
+                <div>
+                  <table class="row">
+                    <tbody><tr class="left-align">
+                      <th class="th-text">
+                        <%= link_to 'Access application', "#{@app_domain}",
+                            class: "btn" %>
+                      </th>
+                    </tr></tbody>
+                  </table>
+                </div>
+                <div style="padding-top:24px">
+                  <table class="row">
+                    <tbody><tr class="left-align">
+                      <th class="th-text padding-bottom-16 width-564">
+                        <p class="context">Runa</p>
+                      </th>
+                    </tr></tbody>
+                  </table>
+                </div>
+              </td>
+            </tr></tbody>
+        </table>
+      </center>
+    </td>
+  </tr></tbody>
+</table>

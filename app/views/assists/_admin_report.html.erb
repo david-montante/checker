@@ -15,7 +15,7 @@
     <tr class="table-row">
       <td><%= user.full_name %></td>
       <td><%= user.email %></td>
-      <td><%= @assists.where(user_id: user.id).to_a.sum(&:worked_hours) %></td>
+      <td><%= @assists.where(user_id: user.id).to_a.sum(&:worked_hours).to_f %></td>
     </tr>
   <% end %>
 </tbody>

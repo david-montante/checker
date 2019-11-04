@@ -1,0 +1,37 @@
+<% provide(:title, 'Add User') %>
+<section id="admin" class="content no-padding-bottom">
+  <%= image_tag("dashboard.png", alt: "Runa", class: "main-logo") %>
+  <h1 class="header-padding">Add User</h1>
+  <div class="container margin-bottom">
+    <%= link_to "← Back", dashboard_users_path, class: "float-left" %>
+  </div>
+</section>
+
+<section id="login" class="content no-padding-top">
+  <div class="form-container">
+    <%= form_for @user, url: admin_create_users_path,
+                        method: :post do |f| %>
+      <div class="field">
+        <%= f.label :first_name, 'Name' %><br />
+        <%= f.text_field :first_name, 
+                         { minlength: 2, maxlength: 30, :required => true, 
+                           autofocus: true, autocomplete: "first_name"} %>
+      </div>
+      <div class="field">
+        <%= f.label :last_name, 'Last Name' %><br />
+        <%= f.text_field :last_name, 
+                         { minlength: 2, maxlength: 30, :required => true, 
+                           autofocus: true, autocomplete: "last_name"} %> 
+      </div>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, 
+                          { minlength: 2, maxlength: 30, :required => true, 
+                            autofocus: true, autocomplete: "email"} %> 
+      </div>
+      <div class="actions">
+        <%= f.submit "Register", { class: "submit-button" } %>
+      </div>
+    <% end %>
+  </div>
+</section>
