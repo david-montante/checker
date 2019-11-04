@@ -1,5 +1,5 @@
 class ContactMailer < ActionMailer::Base
-  default from: "\"Runa\" <no-reply@runa-checker.herokuapp.com"
+  default from: "\"Runa\" <no-reply@runa-checker.herokuapp.com>"
 
   def welcome(user, password, app_domain)
     @user = user
