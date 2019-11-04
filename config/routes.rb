@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
 
-  resources :users, only: [:new, :create] do
+  resources :users, only: [:new] do
     collection do
       post 'admin_create'
       get  'dashboard',        to: 'dashboard#index'
